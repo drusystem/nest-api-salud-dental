@@ -1,8 +1,9 @@
 import { AuditoryEntity } from "src/common/class/auditory.entity";
-import { Column, Entity } from "typeorm";
+import { Role } from "src/roles/entities/role.entity";
+import { Column, Entity, ManyToMany } from "typeorm";
 
 @Entity()
-export class MenuOption extends AuditoryEntity{
+export class Menu extends AuditoryEntity{
     @Column({ primary: true, generated: true })
     id: number;
 
@@ -14,5 +15,8 @@ export class MenuOption extends AuditoryEntity{
 
     @Column({ default: true })
     activo: boolean;
+
+    @ManyToMany(() => Role, role => role.menus)
+    roles: Role[];
   
 }

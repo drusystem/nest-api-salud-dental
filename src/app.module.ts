@@ -5,7 +5,8 @@ import { CatsModule } from './cats/cats.module';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
-import { MenuOptionModule } from './menu-option/menu-option.module';
+import { RolesModule } from './roles/roles.module';
+import { MenuModule } from './menu/menu.module';
 
 @Module({
   imports: [
@@ -35,7 +36,8 @@ import { MenuOptionModule } from './menu-option/menu-option.module';
     BreedsModule,
     UsersModule,
     AuthModule,
-    MenuOptionModule,
+    MenuModule,
+    RolesModule,
   ],
   controllers: [],
   providers: [],

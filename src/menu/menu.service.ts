@@ -11,18 +11,18 @@ import { User } from 'src/users/entities/user.entity';
 export class MenuService {
 
   constructor(
-    @InjectRepository(Menu) private readonly menuOptionRepository:Repository<Menu>
+    @InjectRepository(Menu) private readonly menuRepository:Repository<Menu>
   ){}
 
   async create(createMenuDto: CreateMenuDto,user: UserActiveInterface) {
-    return await this.menuOptionRepository.save({
+    return await this.menuRepository.save({
       ...createMenuDto,
       createdBy:user as User
     });
   }
 
-  findAll() {
-    return `This action returns all menu`;
+  async findAll() {
+    return await this.menuRepository.find();
   }
 
   findOne(id: number) {

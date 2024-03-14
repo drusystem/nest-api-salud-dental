@@ -11,7 +11,7 @@ export class Role extends AuditoryEntity{
     @Column()
     name:string;
 
-    @Column()
+    @Column({ nullable: true })
     description:string;
 
     @ManyToMany(() => Menu, menu => menu.roles)

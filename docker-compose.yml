@@ -11,3 +11,12 @@ services:
       - ./postgres:/var/lib/postgresql/data
     ports:
       - "5436:5432"
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: user@domain.com
+      PGADMIN_DEFAULT_PASSWORD: supersecret
+    ports:
+      - "5050:80"
